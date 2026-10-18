@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VOLT — оформлення замовлення">
+    <title>VOLT — Оформлення замовлення</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+    <link rel="stylesheet" href="style.css">
+    <script src="checkout.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-main">VOLT</span>
+                    <span class="logo-sub">tech store</span>
+                </a>
+
+                <nav class="main-nav" aria-label="Головна навігація">
+                    <a href="index.html" class="nav-link">Головна</a>
+                    <a href="catalog.html" class="nav-link">Каталог</a>
+                    <a href="cart.html" class="nav-link">Кошик</a>
+                </nav>
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobile-menu-button"
+                    aria-label="Відкрити меню"
+                    aria-expanded="false"
+                >
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="header-actions">
+                    <a href="cart.html" class="header-icon" aria-label="Кошик">
+                        <i class="bi bi-cart3"></i>
+                        <span class="cart-counter">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="checkout-page">
+        <div class="container">
+            <div class="cart-page-heading">
+                <div>
+                    <p class="page-kicker">VOLT TECH STORE</p>
+                    <h1>Оформлення замовлення</h1>
+                </div>
+            </div>
+
+            <div id="checkout-empty" class="cart-empty">
+                <i class="bi bi-cart-x"></i>
+                <h2>Кошик порожній</h2>
+                <p>Поверніться до каталогу та додайте хоча б один товар.</p>
+                <a href="catalog.html" class="primary-button">До каталогу</a>
+            </div>
+
+            <div id="checkout-layout" class="checkout-layout">
+                <section class="checkout-form-card">
+                    <h2>Дані покупця</h2>
+
+                    <form id="checkout-form" class="checkout-form">
+                        <div class="form-group">
+                            <label for="customer-name">Ім'я та прізвище</label>
+                            <input id="customer-name" name="name" type="text" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customer-phone">Телефон</label>
+                            <input id="customer-phone" name="phone" type="tel" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customer-email">Email</label>
+                            <input id="customer-email" name="email" type="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customer-address">Адреса доставки</label>
+                            <textarea id="customer-address" name="address" rows="3" required></textarea>
+                        </div>
+
+                        <button type="submit" class="checkout-button">
+                            Підтвердити замовлення
+                            <i class="bi bi-check2"></i>
+                        </button>
+                    </form>
+                </section>
+
+                <aside class="checkout-order-card">
+                    <h2>Ваше замовлення</h2>
+                    <div id="order-list" class="order-list"></div>
+
+                    <div class="order-total">
+                        <span>Разом</span>
+                        <strong id="order-total">0 ₴</strong>
+                    </div>
+                </aside>
+            </div>
+
+            <div id="checkout-success" class="checkout-success">
+                <i class="bi bi-check-circle"></i>
+                <h2>Замовлення оформлено!</h2>
+                <p>Дякуємо за покупку. Кошик очищено.</p>
+                <a href="index.html" class="primary-button" style="max-width: 220px;">
+                    На головну
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 VOLT tech store</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,82 +1,142 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
     <meta
         name="description"
-        content="TechMarket — Техніка, яка випереджає час">
-
+        content="VOLT — Техніка, яка випереджає час"
+    >
     <title>VOLT — магазин техніки</title>
-
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet">
-
+        rel="stylesheet"
+    >
     <link
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+
 
 <body>
     <header class="site-header">
         <div class="container">
             <div class="header-content">
+                <a href="#" class="logo">
+                    <span class="logo-main">
+                        VOLT
+                    </span>
 
-                <a href="logo.png" class="logo">
-                    VOLT<span>TECH STORE</span>
+                    <span class="logo-sub">
+                        tech store
+                    </span>
+
                 </a>
 
                 <nav class="main-nav">
-                    <a href="index.html" class="nav-link active">
+                    <a
+                        href="index.html"
+                        class="nav-link active"
+                    >
                         Головна
                     </a>
 
-                    <a href="catalog.html" class="nav-link">
+
+                    <a
+                        href="catalog.html"
+                        class="nav-link"
+                    >
                         Каталог
                     </a>
 
-                    <a href="#" class="nav-link">
+
+                    <a
+                        href="#"
+                        class="nav-link"
+                    >
                         Переваги
                     </a>
 
-                    <a href="#" class="nav-link">
+
+                    <a
+                        href="#"
+                        class="nav-link"
+                    >
                         Про нас
                     </a>
+
                 </nav>
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobile-menu-button"
+                    aria-label="Відкрити меню"
+                    aria-expanded="false"
+                >
+                    <i class="bi bi-list"></i>
+                </button>
 
                 <div class="header-actions">
 
-                    <a href="cart.html" class="header-icon" aria-label="Кошик">
+
+                    <a
+                        href="cart.html"
+                        class="header-icon"
+                        aria-label="Кошик"
+                    >
+
                         <i class="bi bi-cart3"></i>
-                        <span class="cart-counter">0</span>
+
+                        <span class="cart-counter">
+                            0
+                        </span>
+
                     </a>
 
                     <button
+                        type="button"
                         class="header-icon account-button"
                         aria-label="Профіль"
-                        >
+                    >
+
                         <i class="bi bi-person"></i>
+
                     </button>
+
                 </div>
 
             </div>
+
         </div>
+
     </header>
 
-
     <main>
+
         <section class="search-section">
+
             <div class="container">
 
-                <form class="search-form" id="search-form">
+                <form
+                    class="search-form"
+                    id="search-form"
+                >
 
                     <div class="search-input-wrapper">
 
-                        <i class="bi bi-search search-icon"></i>
+                        <i
+                            class="bi bi-search search-icon"
+                        ></i>
+
 
                         <input
                             type="search"
@@ -88,13 +148,134 @@
 
                     </div>
 
-                    <button type="submit" class="search-button">
+
+                    <button
+                        type="submit"
+                        class="search-button"
+                    >
                         Знайти
                     </button>
 
                 </form>
 
             </div>
+
         </section>
 
+
+        <section class="products-section">
+
+            <div class="container">
+
+
+                <div class="section-header">
+
+                    <h2>
+                        Популярні товари
+                    </h2>
+
+                </div>
+
+
+
+                <div
+                    id="products-loading"
+                    class="products-loading"
+                >
+
+                    <div
+                        class="spinner-border"
+                        role="status"
+                    >
+
+                        <span class="visually-hidden">
+                            Завантаження...
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Завантаження товарів...
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    id="products-error"
+                    class="products-error"
+                    style="display: none;"
+                >
+
+                    <i class="bi bi-exclamation-circle"></i>
+
+                    <p>
+                        Не вдалося завантажити товари.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="retry-button"
+                        class="retry-button"
+                    >
+                        Спробувати ще раз
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="products-container"
+                    class="products-grid"
+                ></div>
+
+
+            </div>
+
+        </section>
+
+
+        <section id="advantages" class="info-section">
+            <div class="container info-grid">
+                <div class="info-card">
+                    <i class="bi bi-truck"></i>
+                    <div><h2>Швидка доставка</h2><p>Доставляємо замовлення по Україні.</p></div>
+                </div>
+                <div class="info-card">
+                    <i class="bi bi-shield-check"></i>
+                    <div><h2>Гарантія</h2><p>Тільки перевірена техніка та зрозумілі умови.</p></div>
+                </div>
+                <div class="info-card">
+                    <i class="bi bi-headset"></i>
+                    <div><h2>Підтримка</h2><p>Допоможемо підібрати техніку під ваші потреби.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>Про VOLT</h2>
+                <p>VOLT — навчальний інтернет-магазин техніки з динамічним каталогом, кошиком і оформленням замовлення.</p>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 VOLT tech store
+            </p>
+
+        </div>
+
+    </footer>
+
+
 </body>
+
+</html>

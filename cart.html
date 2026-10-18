@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VOLT — кошик покупок">
+    <title>VOLT — Кошик</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+    <link rel="stylesheet" href="style.css">
+    <script src="cart.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo" aria-label="VOLT — головна">
+                    <span class="logo-main">VOLT</span>
+                    <span class="logo-sub">tech store</span>
+                </a>
+
+                <nav class="main-nav" aria-label="Головна навігація">
+                    <a href="index.html" class="nav-link">Головна</a>
+                    <a href="catalog.html" class="nav-link">Каталог</a>
+                </nav>
+
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobile-menu-button"
+                    aria-label="Відкрити меню"
+                    aria-expanded="false"
+                >
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="header-actions">
+                    <a
+                        href="cart.html"
+                        class="header-icon"
+                        aria-label="Кошик"
+                    >
+                        <i class="bi bi-cart3"></i>
+                        <span class="cart-counter">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <div class="container">
+            <div class="cart-page-heading">
+                <div>
+                    <p class="page-kicker">VOLT TECH STORE</p>
+                    <h1>Кошик</h1>
+                </div>
+                <a href="index.html" class="back-link">
+                    <i class="bi bi-arrow-left"></i>
+                    Продовжити покупки
+                </a>
+            </div>
+
+            <div id="cart-empty" class="cart-empty">
+                <i class="bi bi-cart-x"></i>
+                <h2>Кошик порожній</h2>
+                <p>Додайте товари з каталогу, щоб оформити замовлення.</p>
+                <a href="index.html" class="primary-button">До покупок</a>
+            </div>
+
+            <div id="cart-content" class="cart-layout">
+                <section class="cart-items-section">
+                    <div class="cart-items-header">
+                        <h2>Ваші товари</h2>
+                        <button id="clear-cart-button" class="clear-cart-button" type="button">
+                            Очистити кошик
+                        </button>
+                    </div>
+
+                    <div id="cart-items" class="cart-items"></div>
+                </section>
+
+                <aside class="cart-summary">
+                    <h2>Підсумок</h2>
+
+                    <div class="summary-row">
+                        <span>Товари</span>
+                        <strong id="cart-total">0 ₴</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Доставка</span>
+                        <strong>Безкоштовно</strong>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-row summary-total">
+                        <span>Разом</span>
+                        <strong id="cart-grand-total">0 ₴</strong>
+                    </div>
+
+                    <a href="checkout.html" id="checkout-link" class="checkout-button">
+                        Оформити замовлення
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 VOLT tech store</p>
+        </div>
+    </footer>
+</body>
+</html>
