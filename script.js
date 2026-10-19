@@ -14,31 +14,14 @@ const USD_TO_UAH = 44;
 
 
 document.addEventListener("DOMContentLoaded", () => {
-
-
-    const productsContainer =
-        document.getElementById("products-container");
-
-    const productsLoading =
-        document.getElementById("products-loading");
-
-    const productsError =
-        document.getElementById("products-error");
-
-    const retryButton =
-        document.getElementById("retry-button");
-
-    const searchForm =
-        document.getElementById("search-form");
-
-    const searchInput =
-        document.getElementById("search-input");
-
-    const cartCounter =
-        document.querySelector(".cart-counter");
-
-    const mainNav =
-        document.querySelector(".main-nav");
+    const productsContainer = document.getElementById("products-container");
+    const productsLoading = document.getElementById("products-loading");
+    const productsError = document.getElementById("products-error");
+    const retryButton = document.getElementById("retry-button");
+    const searchForm = document.getElementById("search-form");
+    const searchInput = document.getElementById("search-input");
+    const cartCounter = document.querySelector(".cart-counter");
+    const mainNav = document.querySelector(".main-nav");
 
 
     if (!productsContainer) {
