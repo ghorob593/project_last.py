@@ -16,6 +16,7 @@
     >
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="profile.js" defer></script>
 </head>
 
 <body>
@@ -30,6 +31,8 @@
                 <nav class="main-nav" aria-label="Головна навігація">
                     <a href="index.html" class="nav-link">Головна</a>
                     <a href="catalog.html" class="nav-link active">Каталог</a>
+                    <a href="index.html#advantages" class="nav-link">Переваги</a>
+                    <a href="index.html#about" class="nav-link">Про нас</a>
                 </nav>
 
                 <button
@@ -47,6 +50,9 @@
                         <i class="bi bi-cart3"></i>
                         <span class="cart-counter">0</span>
                     </a>
+                    <button type="button" class="header-icon account-button" aria-label="Профіль">
+                        <i class="bi bi-person"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -101,5 +107,44 @@
             <p>© 2026 VOLT tech store</p>
         </div>
     </footer>
+
+    <div id="profile-modal" class="profile-modal" aria-hidden="true">
+        <div class="profile-overlay" data-profile-close></div>
+
+        <section class="profile-dialog" role="dialog" aria-modal="true" aria-labelledby="profile-title">
+            <button type="button" class="profile-close" data-profile-close aria-label="Закрити профіль">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+            <div class="profile-icon-large">
+                <i class="bi bi-person"></i>
+            </div>
+
+            <h2 id="profile-title">Мій профіль</h2>
+            <p class="profile-subtitle">
+                Збережіть свої дані, щоб не вводити їх повторно.
+            </p>
+
+            <form id="profile-form" class="profile-form">
+                <div class="form-group">
+                    <label for="profile-name">Ім'я</label>
+                    <input id="profile-name" name="name" type="text" placeholder="Ваше ім'я" autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="profile-email">Email</label>
+                    <input id="profile-email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+                </div>
+
+                <button type="submit" class="primary-button profile-save-button">
+                    <i class="bi bi-check2"></i>
+                    Зберегти профіль
+                </button>
+            </form>
+
+            <p id="profile-status" class="profile-status" aria-live="polite"></p>
+        </section>
+    </div>
+
 </body>
 </html>
